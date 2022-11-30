@@ -1,0 +1,10 @@
+- hosts: docker
+  tasks:
+  - name: deploy todo
+    community.docker.docker_container:
+      image: luciandockero/getting-started
+      name: getting-started
+      state: started
+      auto_remove: true
+      ports:
+        - "3000:3000"
